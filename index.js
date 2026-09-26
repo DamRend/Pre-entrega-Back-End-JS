@@ -102,7 +102,7 @@ switch (comando) {
         break;
     }
     case "POST": {
-        if (orden === "products" && nombre && precio && categoria) {
+        if (orden === "products" && nombre && precio && categoria) {        //verifico que se haya ingresado la palabra "products" y los 3 parametros necesarios para crear un producto
             agregarProducto(nombre, precio, categoria);
         } else {
             console.log("Error de sintaxis, ingrese un comando valido.");
@@ -110,7 +110,7 @@ switch (comando) {
         break;
     }
     case "DELETE": {
-        if(orden && orden.split("/")[0] === "products" && orden.split("/")[1]) {
+        if(orden && orden.split("/")[0] === "products" && orden.split("/")[1]) {    //verifico que haya id y la palabra "products" este bien escrita
             const idABorrar = parseInt(orden.split("/")[1]);
             if (!isNaN(idABorrar)) {
                 borrarProducto(idABorrar);
